@@ -19,27 +19,13 @@
             <li><a href="login.html">Login</a></li>
         </ul>
 
-    <h1>Productos: {{nombre}}</h1>
+    <h1>Productos:</h1>
     <div class="container">
         <div class="main">
             <img class="imagenes" src="img/Auriculares1.jpg" alt="imagen">
             <hr>
-            <h2>Auriculares Sony M32k</h2>
-            <h3>ARS3.000,54</h3>
-            <button>Detalle</button>
-        </div>
-        <div class="main">
-            <img class="imagenes" src="img/Auriculares2.jpg" alt="imagen">
-            <hr>
-            <h2>Auriculares Sony Otto</h2>
-            <h3>ARS7.000,54</h3>
-            <button>Detalle</button>
-        </div>
-        <div class="main">
-            <img class="imagenes" src="img/Minicomponente.jpg" alt="imagen">
-            <hr>
-            <h2>Minicomponente Sony</h2>
-            <h3>ARS45.000,54</h3>
+            <h2>{{misProductos[1].tittle}}</h2>
+            <h3>ARS{{misProductos[1].price}}</h3>
             <button>Detalle</button>
         </div>
     </div>

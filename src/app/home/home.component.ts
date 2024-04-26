@@ -8,5 +8,18 @@ import { Component } from '@angular/core';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-  nombre: String = "Sebastian";
+
+  misProductos: any = this.getAll();
+
+  getAll() {
+    return [{
+      "tittle": "Auriculares",
+      "price": "1200"
+    },
+    {
+      "tittle": "Minicomponente",
+      "price": "45000"
+    }]
+  }
+
 }
