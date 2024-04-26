@@ -1,26 +1,27 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http'; // Importar HttpClientModule
+import { ApiService } from '../api.service';
+import { ProductosService } from '../productos.service';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule], // Agrega CommonModule aquí
+  imports: [CommonModule, HttpClientModule], // Agrega CommonModule aquí
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
 
-  misProductos: any = this.getAll();
+  misProductos: any = [];
 
-  getAll() {
-    return [{
-      "tittle": "Auriculares",
-      "price": "1200"
-    },
-    {
-      "tittle": "Minicomponente",
-      "price": "45000"
-    }]
+  constructor(private productosService: ProductosService  ) { }
+
+  ngOnInit(): void {
+    this.productosService.getAll()
+      .subscribe(data => {
+        this.misProductos = data.results;
+      });
   }
 
 }

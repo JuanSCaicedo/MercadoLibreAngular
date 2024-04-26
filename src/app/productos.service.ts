@@ -6,11 +6,9 @@ import { Injectable } from '@angular/core';
 })
 export class ProductosService {
 
-  constructor(private http: HttpClient) {
-    
-  }
-  
+  constructor(private httpClient: HttpClient) { }
+
   getAll() {
-    return this.http.get("https://api.mercadolibre.com/sites/MLA/search?q=ipod");
+    return this.httpClient.get<any>("https://api.mercadolibre.com/sites/MLA/search?q=ipod");
   }
 }
