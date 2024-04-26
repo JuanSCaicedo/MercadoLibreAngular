@@ -13,24 +13,26 @@
 <body>
     <h1 class="title">Mercado Libre</h1>
 
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="registro.html">Registro</a></li>
-            <li><a href="login.html">Login</a></li>
-        </ul>
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="registro.html">Registro</a></li>
+        <li><a href="login.html">Login</a></li>
+    </ul>
 
     <h1>Productos:</h1>
     <div class="container">
-        <div class="main">
-            <img class="imagenes" src="img/Auriculares1.jpg" alt="imagen">
-            <hr>
-            <h2>{{misProductos[1].tittle}}</h2>
-            <h3>ARS{{misProductos[1].price}}</h3>
-            <button>Detalle</button>
+        <div *ngFor="let item of misProductos">
+            <div class="main">
+                <img class="imagenes" src="img/Auriculares1.jpg" alt="imagen">
+                <hr>
+                <h2>{{item.tittle}}</h2>
+                <h3>ARS{{item.price}}</h3>
+                <button>Detalle</button>
+            </div>
         </div>
     </div>
     <footer>
-        <p>Codeado con amor por Alejandro G Vera para Udemy</p>
+        <p>Codeado con amor por Juan Caicedo M</p>
     </footer>
 
     <script src="script.js" async defer></script>
