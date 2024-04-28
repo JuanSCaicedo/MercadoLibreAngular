@@ -20,5 +20,9 @@ li {
     font-size: x-large;
     padding-left: 25px;
     padding-right: 25px;
+}
 
+li:hover {
+    cursor: pointer;
+    color: green;
 }

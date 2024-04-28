@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "mercado-libre": {
+    "mercadillo-libre": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -11,11 +11,11 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:application",
+          "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/mercado-libre",
+            "outputPath": "dist/mercadillo-libre",
             "index": "src/index.html",
-            "browser": "src/main.ts",
+            "main": "src/main.ts",
             "polyfills": [
               "zone.js"
             ],
@@ -27,12 +27,7 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": [],
-            "server": "src/main.server.ts",
-            "prerender": true,
-            "ssr": {
-              "entry": "server.ts"
-            }
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -51,9 +46,12 @@
               "outputHashing": "all"
             },
             "development": {
+              "buildOptimizer": false,
               "optimization": false,
+              "vendorChunk": true,
               "extractLicenses": false,
-              "sourceMap": true
+              "sourceMap": true,
+              "namedChunks": true
             }
           },
           "defaultConfiguration": "production"
@@ -62,10 +60,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "mercado-libre:build:production"
+              "browserTarget": "mercadillo-libre:build:production"
             },
             "development": {
-              "buildTarget": "mercado-libre:build:development"
+              "browserTarget": "mercadillo-libre:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -73,7 +71,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "mercado-libre:build"
+            "browserTarget": "mercadillo-libre:build"
           }
         },
         "test": {
@@ -98,6 +96,6 @@
     }
   },
   "cli": {
-    "analytics": "3dbc1de9-cd98-47d3-b9c1-d42b8fa7069d"
+    "analytics": false
   }
 }

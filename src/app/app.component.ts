@@ -1,18 +1,10 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { ProductosService } from './productos.service';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet,
-    HomeComponent,
-  ],
-  providers: [ProductosService],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'mercado-libre';
+  title = 'mercadillo-libre';
 }
